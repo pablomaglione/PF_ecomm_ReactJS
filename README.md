@@ -10,6 +10,8 @@ React
 React-Router-DOM
 Bootstrap / React Boostrap
 React-Hook-Form
+Sweetalert2
+fortawesome
 Firebase.
 
 Descripción del proyecto

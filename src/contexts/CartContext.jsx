@@ -8,7 +8,7 @@ import {
     where,
     getDocs,
     documentId,
-  } from "firebase/firestore";
+} from "firebase/firestore";
 
 export const CartContext = createContext([]);
 
@@ -48,10 +48,9 @@ const CartProvider = ({ children }) => {
         const db = getFirestore();
         const orderCollection = collection(db, "orders");
         const order = {
-            items: cartItems,
+            //items: cartItems,
             buyer: buyerData,
         };
-        console.log("sendOrder")
 
         const batch = writeBatch(db);
         const idList = cartItems.map((product) => product.id);
@@ -71,13 +70,8 @@ const CartProvider = ({ children }) => {
             }
         });
         if (withoutStock.length === 0) {
-            const addResponse = await addDoc(orderCollection, order);
+            //addDoc(orderCollection, order);
             batch.commit();
-            alert(`Se genero la orden: ${addResponse.id}`);
-        } else {
-            alert(
-                "La compra no se genero porque no hay productos en stock"
-            );
         }
     };
 
