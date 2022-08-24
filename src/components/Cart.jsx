@@ -105,7 +105,7 @@ const Cart = () => {
                                 </div>
                                 <div className="mb-4">
                                     <Form.Label>Celular</Form.Label>
-                                    <Form.Control type="tel" className="form-control" placeholder="011 555555555" {...register("tel", { required: "Por favor completar dato", pattern: {value: "[0-9]{3}-[0-9]{3}-[0-9]{4}" }, message: 'Por favor ingrese un mail valido'})} requerid />
+                                    <Form.Control type="number" className="form-control" placeholder="115555555" {...register("phone", { required: "Por favor completar dato", pattern: {value: "[0-9]"}, minLength: {value: "9", message: 'Ingrese mínimo los 9 digitos'}})} requerid />
                                     {errors.phone && <p className="text-danger d-block">{errors.phone.message}</p>}
                                 </div>
                                 <div className="mb-4">
