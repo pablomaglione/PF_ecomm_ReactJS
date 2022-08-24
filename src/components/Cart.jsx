@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "./CartItem";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { Modal, Button, Alert, Form } from "react-bootstrap";
-import { useForm, } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 
 const Cart = () => {
@@ -16,7 +16,6 @@ const Cart = () => {
     const handleCancelar = () => setGetForm(false);
     const handleTraer = () => setGetForm(true);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const navigate = useNavigate();
 
     const crearOrden = (name, phone, email) => {
 
