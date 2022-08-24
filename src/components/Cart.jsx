@@ -4,7 +4,7 @@ import { CartContext } from "../contexts/CartContext";
 import CartItem from "./CartItem";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { Modal, Button, Alert, Form } from "react-bootstrap";
-import { useForm } from 'react-hook-form';
+import { useForm, } from 'react-hook-form';
 
 
 const Cart = () => {
@@ -106,13 +106,17 @@ const Cart = () => {
                                 </div>
                                 <div className="mb-4">
                                     <Form.Label>Celular</Form.Label>
-                                    <Form.Control type="phone" className="form-control" placeholder="011 555555555" {...register("phone", { required: "Por favor completar dato" })} />
+                                    <Form.Control type="tel" className="form-control" placeholder="011 555555555" {...register("tel", { required: "Por favor completar dato", pattern: {value: "[0-9]{3}-[0-9]{3}-[0-9]{4}" }, message: 'Por favor ingrese un mail valido'})} requerid />
                                     {errors.phone && <p className="text-danger d-block">{errors.phone.message}</p>}
                                 </div>
                                 <div className="mb-4">
                                     <Form.Label>Correo electrónico</Form.Label>
-                                    <Form.Control type="email" className="form-control" placeholder="tucorreo@electronico.com" aria-describedby="emailHelp" {...register("email", { pattern: "/^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/", required: "Dato necesario para continuar" })} />
-                                    {errors.email && <p className="text-danger d-block">{errors.email.message}</p>}
+                                    <Form.Control type="email" className="form-control" placeholder="email" {...register('email', {
+                                        required: 'Por favor ingresar email', pattern: {
+                                            value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                            message: 'Por favor ingrese un mail valido',
+                                        },
+                                    })} required /> {errors.email && <p className="text-danger d-block">{errors.email.message}</p>}
                                 </div>
                             </Form>
                         </Modal.Body>
