@@ -19,8 +19,7 @@ El archivo App contiene las rutas del e-commerce.
 La carpeta components contiene los componentes utilizados dentro de la app.
 
 Uso de la app
-Ingresando a la pagina web, el usuario podra ver todos los productos disponibles.
-Clickeando en ver detalle, podra ingresar la cantidad de productos que quiere, o volver a la pagina de inicio para solicitar otro producto.
+Ingresando a la pagina web, el usuario podra ver todos los productos y hacien click en ver más podrá ver el detalle del mismo, y podrá ingresar la cantidad de productos que quiere, o volver a la pagina de inicio para solicitar otro producto.
 Cada producto agregado se ve en el carrito, al que se accede haciendo click en el icono del mismo (arriba a la derecha.)
 Para realizar la compra, debe ingresar al carrito, clickar en confirmar compra, y completar el formulario con sus datos.
 Desde allí se recibira la orden de compra en la base de firebase, se mostrara el numero de orden generada.
